@@ -1,23 +1,36 @@
-<com.example.app.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/refreshview"
+    android:orientation="vertical"
     android:layout_height="match_parent">
-    <include  layout="@layout/refresh_head"/>
-    <ScrollView 
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
-        android:id="@+id/content_view"
-        >
-        <TextView 
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="开心接好"
-            android:gravity="center"
-            />
-        
-    </ScrollView>
+    <include layout="@layout/top"/>
+    <com.example.app.PullToRefreshLayout 
+	    android:layout_width="match_parent"
+	    android:id="@+id/refreshview"
+	    android:layout_weight="1"
+	    android:layout_height="0dp">
+	    	
+	    <include
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        layout="@layout/refresh_head" />
+	
+	    <ScrollView 
+	        android:layout_height="fill_parent"
+	        android:layout_width="fill_parent"
+	        android:id="@+id/content_view"
+	        android:background="@drawable/bg_scroll"
+	        >
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            />
+	    </ScrollView>
     
 </com.example.app.PullToRefreshLayout>
+<include layout="@layout/bottom"/>
+    
+</LinearLayout>
     
 
